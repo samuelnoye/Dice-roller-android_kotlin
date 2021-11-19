@@ -12,18 +12,26 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
-//    private val rollBtn: Button = findViewById(R.id.rollBtn)
     private lateinit var imgDice: ImageView
     private lateinit var rollBtn: Button
+    private lateinit var reset: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        imgDice = findViewById(R.id.ImageView)
+         imgDice = findViewById(R.id.ImageView)
          rollBtn = findViewById(R.id.rollBtn)
-        imgDice.setImageResource(R.drawable.alea_0)
+        reset = findViewById(R.id.resendTv)
+
+       imgDice.setImageResource(R.drawable.alea_0)
+
+
         rollBtn.setOnClickListener {
             rollDice()
+        }
+
+        reset.setOnClickListener {
+            imgDice.setImageResource(R.drawable.alea_0)
         }
 
 
@@ -32,6 +40,8 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
 
         var randomInt = Random.nextInt(6) + 1
+
+        Toast.makeText(this,"$randomInt",Toast.LENGTH_SHORT).show()
 
         var drawRes = when(randomInt){
             1 -> R.drawable.alea_1
@@ -42,5 +52,6 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.alea_6
         }
         imgDice.setImageResource(drawRes)
+
     }
 }
