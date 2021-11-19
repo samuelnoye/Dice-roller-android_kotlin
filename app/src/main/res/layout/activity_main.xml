@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingRight="5dp"
     tools:context=".MainActivity">
 
 
@@ -11,35 +13,27 @@
         android:id="@+id/rollBtn"
         android:layout_width="212dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="284dp"
+        android:layout_marginBottom="300dp"
         android:text="@string/roll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ImageView"
-        android:layout_width="243dp"
-        android:layout_height="0dp"
-
-        android:layout_marginBottom="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/rollBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/resendTv"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="22dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         android:clickable="true"
 
-        android:cursorVisible="true"
-        android:foreground="@color/white"
-        android:foregroundTint="#19131212"
+        android:focusable="true"
+        android:foreground="@color/black"
+        android:foregroundTint="#19F1EEEE"
         android:paddingLeft="10dp"
-        android:shadowColor="#100F0F"
+        android:paddingRight="10dp"
+        android:shadowColor="#EFE6E6"
+        android:shadowRadius="2"
         android:text="@string/reset"
         android:textAlignment="center"
         android:textColor="#191717"
@@ -48,8 +42,17 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rollBtn"
-        android:focusable="true"
         tools:ignore="TextViewEdits" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ImageView"
+        android:layout_width="243dp"
+        android:layout_height="0dp"
+
+        android:layout_marginBottom="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/rollBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
